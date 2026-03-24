@@ -9,5 +9,6 @@ authors = [
 ]
 dependencies = [
     "numpy",
-    "matplotlib"
+    "matplotlib",
+    "click"
 ]
