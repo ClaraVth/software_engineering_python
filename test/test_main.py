@@ -1,6 +1,7 @@
 from vicsek.vicsek_bad import VicsekModel
 from matplotlib.animation import FuncAnimation
 import os
+import numpy as np
 
 def test_main():
   assert(True)
@@ -15,3 +16,9 @@ def test_figure():
 
   assert(os.path.exists(outputfile))
   #assert(outputfile.stat().st_size > 10)
+
+def test_distance():
+  r1 = np.array([1,1])
+  r2 = np.array([2,2])
+  assert(np.isclose(VicsekModel.distance(r1, r2), np.sqrt(2)))
+
