@@ -14,6 +14,46 @@ class VicsekModel:
         self.eta = eta
 
     def init_model(self, count):
+        """
+        Initialize the Vicsek model particle system and corresponding quiver plot.
+
+        Parameters
+        ----------
+        count : int
+            Number of particles in the simulation.
+
+        Attributes
+        ----------
+        n : int
+            Number of particles.
+
+        r : numpy.ndarray of shape (n, 2)
+            Random initial positions of particles in the unit square [0, 1] × [0, 1].
+
+        theta : numpy.ndarray of shape (n,)
+            Random initial orientations of particles in normalized angular space [0, 1].
+
+        x : numpy.ndarray of shape (n,)
+            x-coordinates of particle positions.
+
+        y : numpy.ndarray of shape (n,)
+            y-coordinates of particle positions.
+
+        u : numpy.ndarray of shape (n,)
+            x-components of velocity vectors computed as cos(2πθ).
+
+        vv : numpy.ndarray of shape (n,)
+            y-components of velocity vectors computed as sin(2πθ).
+
+        fig : matplotlib.figure.Figure
+            Matplotlib figure object used for visualization.
+
+        ax : matplotlib.axes.Axes
+            Matplotlib axes object for plotting.
+
+        q : matplotlib.quiver.Quiver
+            Quiver plot object representing particle velocities as arrows.
+        """
         self.n = count
 
         self.r = np.random.random((self.n, 2))
