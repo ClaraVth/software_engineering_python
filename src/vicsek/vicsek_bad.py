@@ -33,6 +33,18 @@ class VicsekModel:
 
     @staticmethod
     def distance(p1, p2):
+        """The sum of two numbers.
+        Parameters
+        ----------
+        p1 : numpy.array
+        First array (1x2)
+        p2 : numpy.array
+        Second array (1x2)
+        Returns
+        -------
+        int
+        The distance between p1 and p2
+        """
         return np.sqrt(((p1 - p2) ** 2).sum())
 
     def update_model(self):
